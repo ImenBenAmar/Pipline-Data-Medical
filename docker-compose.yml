@@ -1,0 +1,14 @@
+services:
+  airflow:
+    image: apache/airflow:2.10.2
+    restart: always
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    volumes:
+      - ./data/xml:/opt/airflow/data/xml 
+      - ./dags:/opt/airflow/dags        # DAGs visibles par Airflow
+      - ./scripts:/opt/airflow/scripts  # Scripts Python importables
+      - ./processed:/opt/airflow/processed  # Pour tes CSV de sortie
+    ports:
+      - "8080:8080"
+    command: standalone
