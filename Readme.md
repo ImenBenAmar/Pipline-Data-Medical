@@ -107,3 +107,6 @@ Contact / Notes
 ---------------
 - Ce README est un support synthétique pour votre présentation. Adapter les exemples de commandes et noms de scripts aux fichiers réels de votre repo.
 - Pour le schéma visuel, utiliser le rendu Mermaid sur GitHub/PowerPoint ou exporter une image du diagramme.
+
+workflow : 
+| ![Pipeline](image.png) | Pipeline |
