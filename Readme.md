@@ -110,3 +110,9 @@ Contact / Notes
 
 workflow : 
 | ![Pipeline](image.png) | Pipeline |
+
+star schema : 
+| ![star schema](relations.png) | Pipeline |
+
+Airflow orchestration : 
+| ![Airflow orchestration](Airflow.png) | Pipeline |
