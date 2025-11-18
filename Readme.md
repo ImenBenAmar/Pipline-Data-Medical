@@ -11,20 +11,20 @@ Mermaid (GitHub compatible) :
 ```mermaid
 graph LR
 
-  XML_RAW_1646[XML raw - 1646 fichiers] --> PY_PARSER[Python parser & extraction]
-  PY_PARSER --> CSV_AGG[CSV agrégé - 1 ligne = 1 XML]
-  CSV_AGG --> CLEAN[Python nettoyage & imputation]
-  CLEAN --> SPLIT[Python segmentation -> Dimensions & Faits CSV]
-  SPLIT --> POSTGRES[Postgres (warehouse)]
-  POSTGRES --> MONDRIAN[Mondrian OLAP (cube)]
-  POSTGRES --> POWERBI[Power BI (visualisation) - manuel]
+  XML_RAW_1646[XML raw - 1646 files] --> PY_PARSER[Python parser & extraction]
+  PY_PARSER --> CSV_AGG[CSV aggregated - one row per XML]
+  CSV_AGG --> CLEAN[Python cleaning & normalization]
+  CLEAN --> SPLIT[Python split -> Dimensions & Facts]
+  SPLIT --> POSTGRES[PostgreSQL warehouse]
+  POSTGRES --> MONDRIAN[Mondrian OLAP cube]
+  POSTGRES --> POWERBI[Power BI dashboard]
+  
   AIRFLOW[Airflow orchestration] --> PY_PARSER
   AIRFLOW --> CLEAN
   AIRFLOW --> SPLIT
   AIRFLOW --> POSTGRES
 ```
 
-Note : GitHub/mermaid peut être sensible à certains caractères (parenthèses, accents ou ponctuation) dans les labels. Si le rendu échoue, utilisez le diagramme ASCII ci‑dessous ou simplifiez les labels comme ci‑dessus.
 
 Diagramme ASCII (si Mermaid non disponible) :
 XML → Parser Python → CSV agrégé → Nettoyage Python → Split Dimensions/Faits → PostgreSQL → Mondrian OLAP → Power BI (visu)
