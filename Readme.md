@@ -2,7 +2,7 @@
 
 Résumé
 -----
-Pipeline de traitement de 1 646 fichiers XML médicaux. Objectif : parser les XML, mesurer la complétude, extraire et transformer les champs en CSV (une ligne = un fichier XML), nettoyer, modéliser en *star schema* (dimensions + faits), charger dans PostgreSQL, et exposer un cube OLAP via Mondrian pour analyses multidimensionnelles. L'orchestration est assurée par Airflow. Les visualisations sont réalisées manuellement avec Power BI.
+Pipeline de traitement de 1 646 fichiers XML médicaux. Objectif : parser les XML, mesurer la complétude, extraire et transformer les champs en CSV (une ligne = un fichier XML), nettoyer, modéliser en *star schema* (dimensions + faits), charger dans PostgreSQL, et exposer un cube OLAP via Mondrian pour analyses multidimensionnelles. L'orchestration est assurée par *Airflow*. Les visualisations sont réalisées manuellement avec Power BI.
 
 Architecture (aperçu)
 ---------------------
@@ -76,37 +76,9 @@ Points clés à mettre en avant dans la présentation
 - OLAP vs SQL simple : rapidité des agrégations et navigation multidimensionnelle.
 - Limites et améliorations possibles : automatisation totale du dashboard, tests, scaling.
 
-Exemples de commandes utiles
-----------------------------
-- Lancer un DAG Airflow (cli) :
-  - airflow dags trigger <dag_id>
-- Charger CSV dans PostgreSQL (psql) :
-  - \copy schema.table FROM 'path/file.csv' WITH (FORMAT csv, HEADER true);
 
-Livrables
----------
-- Scripts Python :
-  - parser_xml.py (extraction + statistiques de complétude)
-  - clean_csv.py (nettoyage / imputation)
-  - split_star_schema.py (génération dimensions + faits)
-  - load_postgres.py (chargement batch)
-- DAGs Airflow : orchestration des étapes ci‑dessus
-- Fichiers CSV intermediaires et tables PostgreSQL peuplées
-- Schéma Mondrian et accès MDX pour analyses
 
-Conseils de présentation (2–3 minutes par slide)
-------------------------------------------------
-- Slide 1 : Contexte & objectif (problème + jeu de données)
-- Slide 2 : Pipeline global (montrer le diagramme)
-- Slide 3 : Démonstration rapide (stats de complétude + avant/après nettoyage)
-- Slide 4 : Architecture technique & pourquoi chaque outil
-- Slide 5 : Résultats & exemple d'analyse MDX
-- Slide 6 : Limitations & prochaines étapes
 
-Contact / Notes
----------------
-- Ce README est un support synthétique pour votre présentation. Adapter les exemples de commandes et noms de scripts aux fichiers réels de votre repo.
-- Pour le schéma visuel, utiliser le rendu Mermaid sur GitHub/PowerPoint ou exporter une image du diagramme.
 
 workflow :
 
