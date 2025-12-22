@@ -1,4 +1,4 @@
-# 🏥 AI FR Low — Medical Data Pipeline (XML → OLAP)
+# 🏥 AIRFLow — Medical Data Pipeline (XML → OLAP)
 
 <div align="center">
 
